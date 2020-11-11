@@ -22,6 +22,7 @@
     padding: 1.2rem 1.6rem;
     resize: vertical;
     font: 1.6rem Archivo;
+    color: var(--color-text-base);
 }
 
 .textarea-block:focus-within::after {
