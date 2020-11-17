@@ -35,74 +35,121 @@ function WorkerForm() {
                     <legend>Personal informations</legend>
 
                     <Input name="name"  label="Full Name" />
-                    <Input name="avatar"  label="Avatar" />
-                    <Input name="whatsapp"  label="Whatsapp" />
-                    <Input name="email"  label="E-mail" />
-                    <Textarea name="bio" label="Tell about your experiences" />
+                    <div className="double-input">
+                        <Input name="email"  label="E-mail" />
+                        <Input name="phone"  label="Phone Number" />
+                    </div>
+                    <div className="double-input">
+                        <Input name="birthday"  label="Date of Birth" />
+                        <Input name="birthplace"  label="Birthplace" />
+                    </div>                    
 
                 </fieldset>
 
                 <fieldset>
-                    <legend>About your skills</legend>
+                    <legend>Adress</legend>
 
-                    <Select 
-                    name="speciality"  
-                    label="Speciality" 
-                    options={[
-                        { value: 'Bricklaying', label: 'Bricklaying'},
-                        { value: 'Refurbishment', label: 'Refurbishment'},
-                        { value: 'Carpentry', label: 'Carpentry'},
-                        { value: 'HandyMan', label: 'Handy Man'},
-                        { value: 'Eletrics', label: 'Eletrics'},
-                        { value: 'Plumbing', label: 'Plumbing'},
-                        { value: 'Painting', label: 'Painting'},
-                        { value: 'Gardering', label: 'Gardering'},
-                    ]}
-                    />
+                    <Input name="zipcode"  label="Zip Code" />
+                    <div className="double-input">
+                        <Input name="street"  label="Street" />
+                        <Input name="number"  label="Number" />
+                    </div>
+                    <div className="double-input">
+                        <Input name="city"  label="City" />
+                        <Input name="state"  label="State" />
+                    </div>
 
-                    <Select 
-                    name="experience"  
-                    label="Level of Experience"
-                    options={[
-                        { value: 'Expert', label: 'Expert'},
-                        { value: 'Medium', label: 'Medium'},
-                        { value: 'Some', label: 'Some Experience'},
-                        { value: 'No', label: 'No Experience'},
-                    ]} 
-                    />
+                </fieldset>
+
+                <fieldset>
+                    <legend>Language</legend>
+
+                    <div className="double-input">
+                        <Input name="english"  label="English" />                        
+                        <Select 
+                        name="english-level"  
+                        label="English Level" 
+                        options={[
+                            { value: '1', label: 'I dont speak'},
+                            { value: '2', label: 'I have little knowledge'},
+                            { value: '3', label: 'I can keep conversations'},
+                            { value: '4', label: 'Fluent'},                           
+                        ]}
+                        />
+                        
+                    </div>
+                    <div className="double-input">
+                        <Input name="other-language"  label="Other Language that you speek" />
+                        <Select 
+                        name="language-level"  
+                        label="Language Level" 
+                        options={[
+                            { value: '1', label: 'I dont speak'},
+                            { value: '2', label: 'I have little knowledge'},
+                            { value: '3', label: 'I can keep conversations'},
+                            { value: '4', label: 'Fluent'},                           
+                        ]}
+                        />
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Documentation</legend>
+                    
+                    <div className="double-input">
+                        <Input name="insurance"  label="Insurance Number" />
+                        <Input name="utr"  label="UTR Number" />
+                    </div>
+                    <div className="double-input">
+                        <Input name="cscs"  label="CSCS Card Number" />
+                        <Input name="cscs type"  label="CSCS Card Type" />
+                    </div>
 
                 </fieldset>
 
                 <fieldset>
                     <legend>
-                        Avaible times
+                        Your experiences
                         <button type="button" onClick={addNewScheduleItem}>
-                            + New time
+                            + New experience
                         </button>
                     </legend>
 
                     {scheduleItems.map(scheduleItem => {
                         return (
-                            <div key={scheduleItem.week_day} className="schedule-item">
+                            <div key={scheduleItem.week_day} className="double-input">
                                 <Select
-                                    name="week_day"
-                                    label="Week day"
+                                    name="function"
+                                    label="Function"
                                     options={[
-                                        { value: '0', label: 'Sunday'},
-                                        { value: '1', label: 'Monday'},
-                                        { value: '2', label: 'Tuesday'},
-                                        { value: '3', label: 'Wednesday'},
-                                        { value: '4', label: 'Thursday'},
-                                        { value: '5', label: 'Friday'},
-                                        { value: '6', label: 'Satudarday'},
+                                        { value: 'Carpentry', label: 'Carpentry'},
+                                        { value: 'Bricklaying', label: 'Bricklaying'},
+                                        { value: 'Refurbishment', label: 'Refurbishment'},
+                                        { value: 'Painting', label: 'Painting'},
+                                        { value: 'Eletrics', label: 'Eletrics'},
+                                        { value: 'Plumbing', label: 'Plumbing'},
+                                        { value: 'HandyMan', label: 'Handy Man'},
+                                        { value: 'Gardering', label: 'Gardering'},
+                                        { value: 'Motorist', label: 'Motorist'},
+                                        { value: 'Cleaner', label: 'Cleaner'},
                                     ]}
                                 />
-                                <Input name="from" label="From" type="time" />
-                                <Input name="to" label="To" type="time" />
+                                <Select 
+                                name="experience-level"  
+                                label="Experience Level" 
+                                options={[
+                                    { value: '1', label: 'Up to 1 year'},
+                                    { value: '2', label: '1-2 years'},
+                                    { value: '3', label: '3-5 years'},
+                                    { value: '4', label: 'More than 5 years'},                           
+                                ]}
+                                />
                             </div>
                         );
                     })}
-                </fieldset>
+                    <Textarea name="bio" label="Tell about your experiences" />
+                </fieldset>                
 
                 <footer>
                     <p>
