@@ -1,0 +1,13 @@
+package.json = Onde fica as dependências da aplicação, versão, script principal, etc.
+server.ts = 1ª arquivo que será aberto quando executar o servidor. Tudo é a partir dele. Vai definir todas as rotas da aplicação;
+tsconfig.json = é o arquivo de configuração do typescript. Gerado através do comando 'yarn tsc --init'.
+
+
+
+yarn add ts-node-dev = executa o servidor, script node e fica observando se há alguma alteração no script. Se tiver, restarta. Por padrão o node lê todo servidor e se tiver alguma alteração é necessário parar e reiniciar. Então automatiza o processo.
+yarn start = script que criamos que equivale ao ts-node-dev (ou tsnd) do arquivo server.ts. 
+            transpile-only converte o código de ts para javascript, não verifica se tem erros. Acelera o processo de execução
+            ignore-watch node_modules = Não quero que tente fazer conversões de códigos na página node_modules pq são códigos de terceiros.
+            respawn = para fazer o funcionamento de restartar a aplicação de forma automatica
+
+yarn add express = é um microframework porque traz apenas algumas funcionalidades prontas, para iniciar uma aplicação sem começar do zero.
