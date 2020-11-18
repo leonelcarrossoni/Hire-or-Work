@@ -32,12 +32,27 @@ function WorkerForm() {
 
             <main>
                 <fieldset>
+                    <legend>Login</legend>
+                        <Input name="user"  label="User" />
+                        <Input type="e-mail" name="email"  label="E-mail" />
+                        <Input type="password" name="password"  label="Password" />
+
+                </fieldset>
+
+                <fieldset>
                     <legend>Personal informations</legend>
 
-                    <Input name="name"  label="Full Name" />
+                    <div className="double-input">
+                        <Input name="name"  label="Name" />
+                        <Input name="last-name"  label="Last Name" />
+                    </div>
                     <div className="double-input">
                         <Input name="email"  label="E-mail" />
-                        <Input name="phone"  label="Phone Number" />
+                        <Input 
+                            type="tel" 
+                            name="phone"  label="Phone Number"
+                            pattern="([0-9]{4})-([0-9]{6})" 
+                        />
                     </div>
                     <div className="double-input">
                         <Input name="birthday"  label="Date of Birth" />
@@ -49,11 +64,11 @@ function WorkerForm() {
                 <fieldset>
                     <legend>Adress</legend>
 
-                    <Input name="zipcode"  label="Zip Code" />
                     <div className="double-input">
-                        <Input name="street"  label="Street" />
+                        <Input name="zipcode"  label="Zip Code" />
                         <Input name="number"  label="Number" />
                     </div>
+                    <Input name="street"  label="Street Adress" />
                     <div className="double-input">
                         <Input name="city"  label="City" />
                         <Input name="state"  label="State" />
@@ -149,6 +164,13 @@ function WorkerForm() {
                         );
                     })}
                     <Textarea name="bio" label="Tell about your experiences" />
+                </fieldset>
+
+                <fieldset >
+
+                    <input type="checkbox" id="receive-email" /> I agree to receive information about <b>job opportunities</b> in my <b>email</b><br></br>
+                    <input type="checkbox" id="receive-email"/> I agree to receive information about <b>job opportunities</b> in my <b>whatsapp</b>
+
                 </fieldset>                
 
                 <footer>
