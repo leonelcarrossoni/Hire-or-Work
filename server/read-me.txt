@@ -11,3 +11,8 @@ yarn start = script que criamos que equivale ao ts-node-dev (ou tsnd) do arquivo
             respawn = para fazer o funcionamento de restartar a aplicação de forma automatica
 
 yarn add express = é um microframework porque traz apenas algumas funcionalidades prontas, para iniciar uma aplicação sem começar do zero.
+
+knex:migrate = "knex --knexfile knexfile.ts migrate:latest"
+            knexfile knexfile.ts = indicando o arquivo porque o padrão irá procurar js
+            migrate:latest = executa todas as migrações disponíveis no projeto
+knex:migrate:rollback = para retornar o arquivo caso faça algo errado

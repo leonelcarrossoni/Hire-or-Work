@@ -118,7 +118,7 @@ function WorkerForm() {
                     </div>
                     <div className="double-input">
                         <Input name="cscs"  label="CSCS Card Number" />
-                        <Input name="cscs type"  label="CSCS Card Type" />
+                        <Input name="cscs-type"  label="CSCS Card Type" />
                     </div>
 
                 </fieldset>
@@ -169,7 +169,7 @@ function WorkerForm() {
                 <fieldset >
 
                     <input type="checkbox" id="receive-email" /> I agree to receive information about <b>job opportunities</b> in my <b>email</b><br></br>
-                    <input type="checkbox" id="receive-email"/> I agree to receive information about <b>job opportunities</b> in my <b>whatsapp</b>
+                    <input type="checkbox" id="receive-whats"/> I agree to receive information about <b>job opportunities</b> in my <b>whatsapp</b>
 
                 </fieldset>                
 
