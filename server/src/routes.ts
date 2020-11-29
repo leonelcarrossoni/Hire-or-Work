@@ -2,6 +2,12 @@ import express from 'express';
 import db from './database/connection';
 
 const routes = express.Router();
+
+interface FunctionItem {
+    occupation: string;
+    experiencelevel: number;
+};
+
 // quando o usuário acessar (get) a rota users irá executar a Arrow Function
 // request recebe informações sobre a requisição, como cabeçalho e corpo. Quando vai criar um usuário é aqui que estão os dados dele que vira pelo FE;
 // response é a resposta que a API irá devolver (backend)
@@ -50,7 +56,8 @@ routes.post('/users', async (request, response) => {
         utr,
         cscs,
         cscstype,
-        functions,
+        occupations,
+        occupation,
         experiencelevel,
         bio,
         receiveemail,
@@ -58,10 +65,15 @@ routes.post('/users', async (request, response) => {
         
     } = request.body;
 
+    //trx serve para comunicar que todas estas operações devem ser feitas ao mesmo tempo antes de entrar no db.
+    // Para cancelar isto trocar o trx por db. E.g. await db('users')
+
+    const trx = await db.transaction();
+
 //O try faz parte de uma Promise. Que aqui está contida dentro da função async await.
 // Ele irá tentar executar a função db. mas caso haja algum problema, irá mostrar o erro.
     try{
-        const insertUsersIds = await db('users').insert({
+        const insertUsersIds = await trx('users').insert({
             user,
             email,
             password,
@@ -69,7 +81,7 @@ routes.post('/users', async (request, response) => {
 
         const user_id = insertUsersIds[0];
 
-        await db('informations').insert({
+        await trx('informations').insert({
             name,
             lastname,
             email,
@@ -92,13 +104,29 @@ routes.post('/users', async (request, response) => {
             receiveemail,
             receivewhats,
             user_id
+        });
+
+        const functions_id = occupations.map((functionItem: FunctionItem) => {
+            return {
+                user_id,
+                occupation: functionItem.occupation,
+                experiencelevel: functionItem.experiencelevel,
+            };
         })
-    }
 
-    catch(err){console.log(err)};   
+        await trx('experiences').insert(functions_id);
 
-    return response.send();
-    
+
+        // É neste momento que as alterações são realmente feitas no banco de dados
+        await trx.commit();
+        return response.status(201).send(); // 201 = Criado com sucesso
+    } catch(err) {
+        await trx.rollback(); // Vai desfazer qualquer alteração que tenha sido feita no banco nesta transação
+        console.log(err);
+        return response.status(400).json({
+            error: 'Unexpected error while creating a new class'
+        })
+    };    
 });
 
 export default routes;

@@ -3,7 +3,7 @@ import Knex from 'knex';
 export async function up (knex: Knex) {
     return knex.schema.createTable('experiences', table => { //Irá criar uma tabela chamada users
         table.increments('id').primary();
-        table.string('function').notNullable();
+        table.string('occupation').notNullable();
         table.string('experiencelevel').notNullable();
 
         table.integer('user_id')
