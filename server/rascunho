@@ -1,0 +1,156 @@
+{        
+    "user": "leonelsc",
+    "password": "1234",
+    "name":"Leonel",
+    "last-name":"Carrossoni",
+    "email":"leonelsc11@hotmail.com",
+    "tel":1198257820,
+    "birthday":"01/02/1991",
+    "birthplace":"Brazil",
+    "zipcode":"15703208",
+    "home-number":"2472",
+    "street":"Rua Lisboa",
+    "city":"Jales",
+    "state":"São Paulo",
+    "english-level":2,
+    "other-language":"Portugues",
+    "language-level":4,
+    "insurance":"55555",
+    "utr":"55555",
+    "cscs":"55555",
+    "cscs-type":"Red",
+    "function":"Carpentry",
+    "experience-level":2,
+    "bio":"Minha Bio",
+    "receive-email":1,
+    "receive-whats":1
+}
+
+"functions": [
+    {"function":"Carpentry", "experience-level":2,},
+    {"function":"Plumbing", "experience-level":3,}
+    ]
+
+
+
+const {
+        user,
+        password,
+        name,
+        last-name,
+        email,
+        tel,
+        birthday,
+        birthplace,
+        zipcode,
+        home-Number,
+        street,
+        city,
+        state,
+        english-level,
+        other-language,
+        language-level,
+        insurance,
+        utr,
+        cscs,
+        cscs-typeof,
+        function,
+        experience-level,
+        bio,
+        receive-email,
+        receive-whats
+    } = request.body;
+
+
+
+
+
+    const {
+        user,
+        password,
+        name,
+        last-name,
+        email,
+        tel,
+        birthday,
+        birthplace,
+        zipcode,
+        home-number,
+        street,
+        city,
+        state,
+        english-level,
+        other-language,
+        language-level,
+        insurance,
+        utr,
+        cscs,
+        cscs-typeof,
+        function,
+        experience-level,
+        bio,
+        receive-email,
+        receive-whats
+    } = request.body;
+
+    {        
+    "user": "leonelsc",
+    "password": "1234",
+    "name":"Leonel",
+    "lastname":"Carrossoni",
+    "email":"leonelsc11@hotmail.com",
+    "tel":1198257820,
+    "birthday":"01/02/1991",
+    "birthplace":"Brazil",
+    "zipcode":"15703208",
+    "homenumber":"2472",
+    "street":"Rua Lisboa",
+    "city":"Jales",
+    "state":"São Paulo",
+    "englishlevel":2,
+    "otherlanguage":"Portugues",
+    "languagelevel":4,
+    "insurance":"55555",
+    "utr":"55555",
+    "cscs":"55555",
+    "cscstype":"Red",
+    "functions": [
+        {"function":"Carpentry", "experience-level":2,},
+        {"function":"Plumbing", "experience-level":3,}
+    ]
+    "experiencelevel":2,
+    "bio":"Minha Bio",
+    "receiveemail":1,
+    "receivewhats":1
+}
+
+   {        
+    "user": "leonelsc",
+    "password": "1234",
+    "name":"Leonel",
+    "lastname":"Carrossoni",
+    "email":"leonelsc11@hotmail.com",
+    "tel":1198257820,
+    "birthday":"01/02/1991",
+    "birthplace":"Brazil",
+    "zipcode":"15703208",
+    "homenumber":"2472",
+    "street":"Rua Lisboa",
+    "city":"Jales",
+    "state":"São Paulo",
+    "englishlevel":2,
+    "otherlanguage":"Portugues",
+    "languagelevel":4,
+    "insurance":"55555",
+    "utr":"55555",
+    "cscs":"55555",
+    "cscstype":"Red",
+    "functions": [
+        {"function":"Carpentry", "experience-level":2,},
+        {"function":"Plumbing", "experience-level":3,}
+    ],
+    "experiencelevel":2,
+    "bio":"Minha Bio",
+    "receiveemail":1,
+    "receivewhats":1
+}

@@ -16,3 +16,10 @@ knex:migrate = "knex --knexfile knexfile.ts migrate:latest"
             knexfile knexfile.ts = indicando o arquivo porque o padrão irá procurar js
             migrate:latest = executa todas as migrações disponíveis no projeto
 knex:migrate:rollback = para retornar o arquivo caso faça algo errado
+
+
+Clica em cima da tabela database. Clica em new query
+Escreve a query. Eg.
+SELECT * FROM classes;
+Ctrl + Shift + P = barra de acesso rápido 
+Seleciona ' Sqlite: Run query'

@@ -6,7 +6,7 @@ const db = knex({
     connection: {
         //__dirname retorna o caminho do diretório do arquivo. E dentro do database criar o arquivo sqlite
         // path.resolve auxilia na definição do diretório
-        filename: path.resolve(__dirname, '/database.sqlite') //onde vai ficar armazenado o sqlite
+        filename: path.resolve(__dirname, 'database.sqlite') //onde vai ficar armazenado o sqlite
     },
     useNullAsDefault: true, //O sqlite não sabe o que utilizar por padrão nos campos não preenchido. Aqui definimos como Nulo.
 });

@@ -44,7 +44,7 @@ function WorkerForm() {
 
                     <div className="double-input">
                         <Input name="name"  label="Name" />
-                        <Input name="last-name"  label="Last Name" />
+                        <Input name="lastname"  label="Last Name" />
                     </div>
                     <div className="double-input">
                         <Input name="email"  label="E-mail" />

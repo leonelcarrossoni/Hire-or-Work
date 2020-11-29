@@ -4,10 +4,9 @@ export async function up (knex: Knex) {
     return knex.schema.createTable('experiences', table => { //Irá criar uma tabela chamada users
         table.increments('id').primary();
         table.string('function').notNullable();
-        table.string('experience-level').notNullable();
-        table.string('bio').notNullable();
+        table.string('experiencelevel').notNullable();
 
-        table.integer('experience_id')
+        table.integer('user_id')
             .notNullable()
             .references('id')
             .inTable('users')     // se relaciona com o id da tabela users
