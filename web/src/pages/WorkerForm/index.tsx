@@ -11,15 +11,15 @@ import './styles.css';
 
 function WorkerForm() {
     const [scheduleItems, setScheduleItems] = useState([
-        { week_day: 0, from: '', to: ''},
+        { function: 0, experiencelevel: ''},
     ]);
 
     function addNewScheduleItem() {
         setScheduleItems([
             ...scheduleItems, //Copia todos os items do array scheduleItems
-            {week_day: 0, //Incluí as informações do novo schedule
-            from: '',
-            to:''}
+            {function: 0, //Incluí as informações do novo schedule
+            experiencelevel: '',
+            }
         ]);
     }
 
@@ -133,7 +133,7 @@ function WorkerForm() {
 
                     {scheduleItems.map(scheduleItem => {
                         return (
-                            <div key={scheduleItem.week_day} className="double-input">
+                            <div key={scheduleItem.function} className="double-input">
                                 <Select
                                     name="function"
                                     label="Function"
@@ -151,7 +151,7 @@ function WorkerForm() {
                                     ]}
                                 />
                                 <Select 
-                                name="experience-level"  
+                                name="experiencelevel"  
                                 label="Experience Level" 
                                 options={[
                                     { value: '1', label: 'Up to 1 year'},
