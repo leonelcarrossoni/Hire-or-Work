@@ -98,33 +98,8 @@
 
                 </fieldset>
 
-                <fieldset>
-                    <legend>
-                        Avaible times
-                        <button type="button" onClick={addNewScheduleItem}>
-                            + New time
-                        </button>
-                    </legend>
 
-                    {scheduleItems.map(scheduleItem => {
-                        return (
-                            <div key={scheduleItem.week_day} className="schedule-item">
-                                <Select
-                                    name="week_day"
-                                    label="Week day"
-                                    options={[
-                                        { value: '0', label: 'Sunday'},
-                                        { value: '1', label: 'Monday'},
-                                        { value: '2', label: 'Tuesday'},
-                                        { value: '3', label: 'Wednesday'},
-                                        { value: '4', label: 'Thursday'},
-                                        { value: '5', label: 'Friday'},
-                                        { value: '6', label: 'Satudarday'},
-                                    ]}
-                                />
-                                <Input name="from" label="From" type="time" />
-                                <Input name="to" label="To" type="time" />
-                            </div>
-                        );
-                    })}
-                </fieldset> */}
+
+
+
+Incluir Next
